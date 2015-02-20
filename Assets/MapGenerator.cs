@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MapGenerator : MonoBehaviour 
 {
+	public bool drawGizmos = true;
 	public int width = 60;
 	public int height = 80;
 	[Range (0, 100)]
@@ -13,6 +15,8 @@ public class MapGenerator : MonoBehaviour
 
 	int[,] map;
 
+	public int[,] MAP { get { return map; } }
+
 	void Start ()
 	{
 		GenerateMap ();
@@ -20,9 +24,8 @@ public class MapGenerator : MonoBehaviour
 
 	void Update ()
 	{
-		if (Input.GetKeyUp (KeyCode.R))
+		if (Input.GetMouseButtonUp (0))
 		{
-			Debug.Log ("Generate New Map.");
 			Start ();
 		}
 	}
@@ -100,7 +103,7 @@ public class MapGenerator : MonoBehaviour
 
 	void OnDrawGizmos ()
 	{
-		if (map != null)
+		if (map != null && drawGizmos)
 		{
 			for (int x=0; x<width; x++) {
 				for (int y=0; y<height; y++) {
