@@ -5,6 +5,9 @@ using System.Collections.Generic;
 public class MapGenerator : MonoBehaviour 
 {
 	public bool drawGizmos = true;
+	public Color activeColor = Color.black;
+	public Color deactiveColor = Color.white;
+
 	public int width = 60;
 	public int height = 80;
 	[Range (0, 100)]
@@ -39,6 +42,9 @@ public class MapGenerator : MonoBehaviour
 		{
 			SmoothMap ();
 		}
+
+		MeshGenerator meshGen = GetComponent<MeshGenerator> ();
+		meshGen.GenerateMesh (map, 1);
 	}
 
 	void RandomFillMap ()
@@ -107,8 +113,8 @@ public class MapGenerator : MonoBehaviour
 		{
 			for (int x=0; x<width; x++) {
 				for (int y=0; y<height; y++) {
-					Gizmos.color = (map [x, y] == 1) ? Color.black : Color.white;
-					Vector3 pos = new Vector3 (-width/2 + x + 0.5f, -height/2 + y + 0.5f);
+					Gizmos.color = (map [x, y] == 1) ? activeColor : deactiveColor;
+					Vector3 pos = new Vector3 (-width/2 + x + 0.5f, -1f, -height/2 + y + 0.5f);
 					Gizmos.DrawCube (pos, Vector3.one);
 				}
 			}

@@ -83,13 +83,14 @@ GameObject:
   m_Component:
   - 4: {fileID: 101637149}
   - 114: {fileID: 101637148}
+  - 114: {fileID: 101637150}
   m_Layer: 0
   m_Name: MapGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &101637148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,7 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d6836f904aafa46beb7d4565c2e5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawGizmos: 0
+  drawGizmos: 1
+  activeColor: {r: 1, g: 0, b: 0, a: 1}
+  deactiveColor: {r: .158620834, g: 0, b: 1, a: 1}
   width: 20
   height: 10
   randomFillPercent: 15
@@ -115,11 +118,22 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 101637147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .370000005, y: -1.47000003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &101637150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 101637147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 564c83cffda4ef143bd546063a6b8bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458565326
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,8 +193,8 @@ Camera:
   near clip plane: .300000012
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -198,8 +212,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 458565326}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -444,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1929717101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,6 +485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawGizmos: 0
+  activeColor: {r: 0, g: 0, b: 0, a: 1}
+  deactiveColor: {r: 1, g: 1, b: 1, a: 1}
   width: 20
   height: 10
   randomFillPercent: 15
@@ -547,7 +563,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2104799404}
   m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381661, w: .875426114}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 20, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
